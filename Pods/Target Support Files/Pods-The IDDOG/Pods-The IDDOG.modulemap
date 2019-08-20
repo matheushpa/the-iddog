@@ -1,0 +1,6 @@
+framework module Pods_The_IDDOG {
+  umbrella header "Pods-The IDDOG-umbrella.h"
+
+  export *
+  module * { export * }
+}

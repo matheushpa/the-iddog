@@ -1,0 +1,674 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2FDA0759230C2DC40048A97C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA0758230C2DC40048A97C /* AppDelegate.swift */; };
+		2FDA075B230C2DC40048A97C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA075A230C2DC40048A97C /* ViewController.swift */; };
+		2FDA075E230C2DC40048A97C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA075C230C2DC40048A97C /* Main.storyboard */; };
+		2FDA0760230C2DC90048A97C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA075F230C2DC90048A97C /* Assets.xcassets */; };
+		2FDA0763230C2DC90048A97C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA0761230C2DC90048A97C /* LaunchScreen.storyboard */; };
+		2FDA076E230C2DC90048A97C /* The_IDDOGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA076D230C2DC90048A97C /* The_IDDOGTests.swift */; };
+		2FDA0779230C2DC90048A97C /* The_IDDOGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA0778230C2DC90048A97C /* The_IDDOGUITests.swift */; };
+		73DB248DEC8E28E81FA8D386 /* Pods_The_IDDOG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F8B879004A0DBA56F54FB1 /* Pods_The_IDDOG.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2FDA076A230C2DC90048A97C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FDA074D230C2DC30048A97C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FDA0754230C2DC40048A97C;
+			remoteInfo = "The IDDOG";
+		};
+		2FDA0775230C2DC90048A97C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FDA074D230C2DC30048A97C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FDA0754230C2DC40048A97C;
+			remoteInfo = "The IDDOG";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2FDA0755230C2DC40048A97C /* The IDDOG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The IDDOG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FDA0758230C2DC40048A97C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2FDA075A230C2DC40048A97C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2FDA075D230C2DC40048A97C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2FDA075F230C2DC90048A97C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2FDA0762230C2DC90048A97C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2FDA0764230C2DC90048A97C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FDA0769230C2DC90048A97C /* The IDDOGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The IDDOGTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FDA076D230C2DC90048A97C /* The_IDDOGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_IDDOGTests.swift; sourceTree = "<group>"; };
+		2FDA076F230C2DC90048A97C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FDA0774230C2DC90048A97C /* The IDDOGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The IDDOGUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FDA0778230C2DC90048A97C /* The_IDDOGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_IDDOGUITests.swift; sourceTree = "<group>"; };
+		2FDA077A230C2DC90048A97C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4171F69CDFCFDAAA920BD6A5 /* Pods-The IDDOG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The IDDOG.release.xcconfig"; path = "Pods/Target Support Files/Pods-The IDDOG/Pods-The IDDOG.release.xcconfig"; sourceTree = "<group>"; };
+		AD455CFD55D98CFB86A7A4C3 /* Pods-The IDDOG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The IDDOG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The IDDOG/Pods-The IDDOG.debug.xcconfig"; sourceTree = "<group>"; };
+		C4F8B879004A0DBA56F54FB1 /* Pods_The_IDDOG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_IDDOG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2FDA0752230C2DC40048A97C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73DB248DEC8E28E81FA8D386 /* Pods_The_IDDOG.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FDA0766230C2DC90048A97C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FDA0771230C2DC90048A97C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04D936E60313A392DC255665 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD455CFD55D98CFB86A7A4C3 /* Pods-The IDDOG.debug.xcconfig */,
+				4171F69CDFCFDAAA920BD6A5 /* Pods-The IDDOG.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2FDA074C230C2DC30048A97C = {
+			isa = PBXGroup;
+			children = (
+				2FDA0757230C2DC40048A97C /* The IDDOG */,
+				2FDA076C230C2DC90048A97C /* The IDDOGTests */,
+				2FDA0777230C2DC90048A97C /* The IDDOGUITests */,
+				2FDA0756230C2DC40048A97C /* Products */,
+				04D936E60313A392DC255665 /* Pods */,
+				9A04721C878BB6BCCA09310F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2FDA0756230C2DC40048A97C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FDA0755230C2DC40048A97C /* The IDDOG.app */,
+				2FDA0769230C2DC90048A97C /* The IDDOGTests.xctest */,
+				2FDA0774230C2DC90048A97C /* The IDDOGUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2FDA0757230C2DC40048A97C /* The IDDOG */ = {
+			isa = PBXGroup;
+			children = (
+				2FDA0758230C2DC40048A97C /* AppDelegate.swift */,
+				2FDA075A230C2DC40048A97C /* ViewController.swift */,
+				2FDA075C230C2DC40048A97C /* Main.storyboard */,
+				2FDA075F230C2DC90048A97C /* Assets.xcassets */,
+				2FDA0761230C2DC90048A97C /* LaunchScreen.storyboard */,
+				2FDA0764230C2DC90048A97C /* Info.plist */,
+			);
+			path = "The IDDOG";
+			sourceTree = "<group>";
+		};
+		2FDA076C230C2DC90048A97C /* The IDDOGTests */ = {
+			isa = PBXGroup;
+			children = (
+				2FDA076D230C2DC90048A97C /* The_IDDOGTests.swift */,
+				2FDA076F230C2DC90048A97C /* Info.plist */,
+			);
+			path = "The IDDOGTests";
+			sourceTree = "<group>";
+		};
+		2FDA0777230C2DC90048A97C /* The IDDOGUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2FDA0778230C2DC90048A97C /* The_IDDOGUITests.swift */,
+				2FDA077A230C2DC90048A97C /* Info.plist */,
+			);
+			path = "The IDDOGUITests";
+			sourceTree = "<group>";
+		};
+		9A04721C878BB6BCCA09310F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4F8B879004A0DBA56F54FB1 /* Pods_The_IDDOG.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2FDA0754230C2DC40048A97C /* The IDDOG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FDA077D230C2DC90048A97C /* Build configuration list for PBXNativeTarget "The IDDOG" */;
+			buildPhases = (
+				193C51AD309CDCA09E990CCA /* [CP] Check Pods Manifest.lock */,
+				2FDA0751230C2DC40048A97C /* Sources */,
+				2FDA0752230C2DC40048A97C /* Frameworks */,
+				2FDA0753230C2DC40048A97C /* Resources */,
+				2A8A70450704E7827A7CA589 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "The IDDOG";
+			productName = "The IDDOG";
+			productReference = 2FDA0755230C2DC40048A97C /* The IDDOG.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2FDA0768230C2DC90048A97C /* The IDDOGTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FDA0780230C2DC90048A97C /* Build configuration list for PBXNativeTarget "The IDDOGTests" */;
+			buildPhases = (
+				2FDA0765230C2DC90048A97C /* Sources */,
+				2FDA0766230C2DC90048A97C /* Frameworks */,
+				2FDA0767230C2DC90048A97C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FDA076B230C2DC90048A97C /* PBXTargetDependency */,
+			);
+			name = "The IDDOGTests";
+			productName = "The IDDOGTests";
+			productReference = 2FDA0769230C2DC90048A97C /* The IDDOGTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2FDA0773230C2DC90048A97C /* The IDDOGUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FDA0783230C2DC90048A97C /* Build configuration list for PBXNativeTarget "The IDDOGUITests" */;
+			buildPhases = (
+				2FDA0770230C2DC90048A97C /* Sources */,
+				2FDA0771230C2DC90048A97C /* Frameworks */,
+				2FDA0772230C2DC90048A97C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FDA0776230C2DC90048A97C /* PBXTargetDependency */,
+			);
+			name = "The IDDOGUITests";
+			productName = "The IDDOGUITests";
+			productReference = 2FDA0774230C2DC90048A97C /* The IDDOGUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2FDA074D230C2DC30048A97C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Matheus Holanda";
+				TargetAttributes = {
+					2FDA0754230C2DC40048A97C = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					2FDA0768230C2DC90048A97C = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 2FDA0754230C2DC40048A97C;
+					};
+					2FDA0773230C2DC90048A97C = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 2FDA0754230C2DC40048A97C;
+					};
+				};
+			};
+			buildConfigurationList = 2FDA0750230C2DC30048A97C /* Build configuration list for PBXProject "The IDDOG" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2FDA074C230C2DC30048A97C;
+			productRefGroup = 2FDA0756230C2DC40048A97C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2FDA0754230C2DC40048A97C /* The IDDOG */,
+				2FDA0768230C2DC90048A97C /* The IDDOGTests */,
+				2FDA0773230C2DC90048A97C /* The IDDOGUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2FDA0753230C2DC40048A97C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FDA0763230C2DC90048A97C /* LaunchScreen.storyboard in Resources */,
+				2FDA0760230C2DC90048A97C /* Assets.xcassets in Resources */,
+				2FDA075E230C2DC40048A97C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FDA0767230C2DC90048A97C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FDA0772230C2DC90048A97C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		193C51AD309CDCA09E990CCA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-The IDDOG-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A8A70450704E7827A7CA589 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-The IDDOG/Pods-The IDDOG-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-The IDDOG/Pods-The IDDOG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2FDA0751230C2DC40048A97C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FDA075B230C2DC40048A97C /* ViewController.swift in Sources */,
+				2FDA0759230C2DC40048A97C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FDA0765230C2DC90048A97C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FDA076E230C2DC90048A97C /* The_IDDOGTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FDA0770230C2DC90048A97C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FDA0779230C2DC90048A97C /* The_IDDOGUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2FDA076B230C2DC90048A97C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FDA0754230C2DC40048A97C /* The IDDOG */;
+			targetProxy = 2FDA076A230C2DC90048A97C /* PBXContainerItemProxy */;
+		};
+		2FDA0776230C2DC90048A97C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FDA0754230C2DC40048A97C /* The IDDOG */;
+			targetProxy = 2FDA0775230C2DC90048A97C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2FDA075C230C2DC40048A97C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FDA075D230C2DC40048A97C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2FDA0761230C2DC90048A97C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FDA0762230C2DC90048A97C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2FDA077B230C2DC90048A97C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2FDA077C230C2DC90048A97C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2FDA077E230C2DC90048A97C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD455CFD55D98CFB86A7A4C3 /* Pods-The IDDOG.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z47WFR3TL4;
+				INFOPLIST_FILE = "The IDDOG/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.matheusholanda.The-IDDOG";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2FDA077F230C2DC90048A97C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4171F69CDFCFDAAA920BD6A5 /* Pods-The IDDOG.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z47WFR3TL4;
+				INFOPLIST_FILE = "The IDDOG/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.matheusholanda.The-IDDOG";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2FDA0781230C2DC90048A97C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z47WFR3TL4;
+				INFOPLIST_FILE = "The IDDOGTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.matheusholanda.The-IDDOGTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The IDDOG.app/The IDDOG";
+			};
+			name = Debug;
+		};
+		2FDA0782230C2DC90048A97C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z47WFR3TL4;
+				INFOPLIST_FILE = "The IDDOGTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.matheusholanda.The-IDDOGTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The IDDOG.app/The IDDOG";
+			};
+			name = Release;
+		};
+		2FDA0784230C2DC90048A97C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z47WFR3TL4;
+				INFOPLIST_FILE = "The IDDOGUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.matheusholanda.The-IDDOGUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "The IDDOG";
+			};
+			name = Debug;
+		};
+		2FDA0785230C2DC90048A97C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z47WFR3TL4;
+				INFOPLIST_FILE = "The IDDOGUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.matheusholanda.The-IDDOGUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "The IDDOG";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2FDA0750230C2DC30048A97C /* Build configuration list for PBXProject "The IDDOG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FDA077B230C2DC90048A97C /* Debug */,
+				2FDA077C230C2DC90048A97C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FDA077D230C2DC90048A97C /* Build configuration list for PBXNativeTarget "The IDDOG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FDA077E230C2DC90048A97C /* Debug */,
+				2FDA077F230C2DC90048A97C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FDA0780230C2DC90048A97C /* Build configuration list for PBXNativeTarget "The IDDOGTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FDA0781230C2DC90048A97C /* Debug */,
+				2FDA0782230C2DC90048A97C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FDA0783230C2DC90048A97C /* Build configuration list for PBXNativeTarget "The IDDOGUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FDA0784230C2DC90048A97C /* Debug */,
+				2FDA0785230C2DC90048A97C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2FDA074D230C2DC30048A97C /* Project object */;
+}
