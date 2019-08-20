@@ -18,13 +18,16 @@ class DogsCollectionViewCell: UICollectionViewCell {
     }
     
     func setupImageViewLayout() {
-        dogImageView.translatesAutoresizingMaskIntoConstraints = false
-//        dogImageView.layer.cornerRadius = 10.0
-        dogImageView.contentMode = .scaleAspectFill
         dogImageView.image = UIImage(named: "husky")
+        dogImageView.contentMode = .scaleAspectFill
+        dogImageView.layer.cornerRadius = 5.0
+        dogImageView.clipsToBounds = true
+        dogImageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(dogImageView)
-        dogImageView.heightAnchor.constraint(equalTo: heightAnchor, constant: frame.height).isActive = true
-        dogImageView.widthAnchor.constraint(equalTo: widthAnchor, constant: frame.width).isActive = true
+        dogImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        dogImageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        dogImageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        dogImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 
     required init?(coder aDecoder: NSCoder) {
