@@ -94,9 +94,16 @@ class SignInViewController: UIViewController {
             if email.isEmpty {
                 showAlert()
             } else {
-                let nextViewController = DogsTableViewController()
-                present(nextViewController, animated: true, completion: nil)
+                goToNextView()
             }
         }
+    }
+    
+    func goToNextView() {
+        let nextViewController = DogsTableViewController()
+        let navigationController = UINavigationController(rootViewController: nextViewController)
+        navigationController.navigationBar.topItem?.titleView = appNameLabel
+        navigationController.navigationBar.isTranslucent = false
+        present(navigationController, animated: true, completion: nil)
     }
 }

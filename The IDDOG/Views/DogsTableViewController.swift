@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DogsTableViewController: UINavigationController {
+class DogsTableViewController: UIViewController {
 
     let tableView = UITableView()
     
@@ -27,7 +27,6 @@ class DogsTableViewController: UINavigationController {
     
     func setupLayout() {
         view.backgroundColor = .white
-        navigationBar.isTranslucent = false
         setupTableViewLayout()
     }
     
@@ -35,10 +34,14 @@ class DogsTableViewController: UINavigationController {
         tableView.separatorColor = .white
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + 1).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+    }
+    
+    @objc func showSelectedImage() {
+        
     }
 }
 

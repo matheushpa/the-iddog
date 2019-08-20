@@ -61,4 +61,9 @@ class DogsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCellIdentifier", for: indexPath) as! DogsCollectionViewCell
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = DogsTableViewController()
+        viewController.showSelectedImage()
+    }
 }
