@@ -94,8 +94,8 @@ class SignInViewController: UIViewController {
             if email.isEmpty {
                 showAlert()
             } else {
-//                let viewController = TableTestViewController()
-//                present(viewController, animated: true, completion: nil)
+                let nextViewController = DogsTableViewController()
+                present(nextViewController, animated: true, completion: nil)
             }
         }
     }
