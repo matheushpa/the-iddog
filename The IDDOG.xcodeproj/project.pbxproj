@@ -16,6 +16,12 @@
 		2F28E7E8230C3BAB0049212C /* DogsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28E7E7230C3BAB0049212C /* DogsTableViewHeader.swift */; };
 		2F28E7E9230C3BAB0049212C /* DogsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28E7E7230C3BAB0049212C /* DogsTableViewHeader.swift */; };
 		2F28E7EA230C3BAB0049212C /* DogsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28E7E7230C3BAB0049212C /* DogsTableViewHeader.swift */; };
+		2FBA4D92230C4249009FF1FF /* DogsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA4D91230C4249009FF1FF /* DogsTableViewCell.swift */; };
+		2FBA4D93230C4249009FF1FF /* DogsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA4D91230C4249009FF1FF /* DogsTableViewCell.swift */; };
+		2FBA4D94230C4249009FF1FF /* DogsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA4D91230C4249009FF1FF /* DogsTableViewCell.swift */; };
+		2FBA4D96230C43FE009FF1FF /* DogsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA4D95230C43FE009FF1FF /* DogsCollectionViewCell.swift */; };
+		2FBA4D97230C43FE009FF1FF /* DogsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA4D95230C43FE009FF1FF /* DogsCollectionViewCell.swift */; };
+		2FBA4D98230C43FE009FF1FF /* DogsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA4D95230C43FE009FF1FF /* DogsCollectionViewCell.swift */; };
 		2FDA0759230C2DC40048A97C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA0758230C2DC40048A97C /* AppDelegate.swift */; };
 		2FDA0760230C2DC90048A97C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA075F230C2DC90048A97C /* Assets.xcassets */; };
 		2FDA0763230C2DC90048A97C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA0761230C2DC90048A97C /* LaunchScreen.storyboard */; };
@@ -45,6 +51,8 @@
 		2F28E7DE230C36610049212C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2F28E7E3230C3AAB0049212C /* DogsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsTableViewController.swift; sourceTree = "<group>"; };
 		2F28E7E7230C3BAB0049212C /* DogsTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsTableViewHeader.swift; sourceTree = "<group>"; };
+		2FBA4D91230C4249009FF1FF /* DogsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsTableViewCell.swift; sourceTree = "<group>"; };
+		2FBA4D95230C43FE009FF1FF /* DogsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FDA0755230C2DC40048A97C /* The IDDOG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The IDDOG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDA0758230C2DC40048A97C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FDA075F230C2DC90048A97C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,10 +108,28 @@
 			isa = PBXGroup;
 			children = (
 				2F28E7DE230C36610049212C /* SignInViewController.swift */,
+				2FBA4D95230C43FE009FF1FF /* DogsCollectionViewCell.swift */,
 				2F28E7E3230C3AAB0049212C /* DogsTableViewController.swift */,
+				2FBA4D91230C4249009FF1FF /* DogsTableViewCell.swift */,
 				2F28E7E7230C3BAB0049212C /* DogsTableViewHeader.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2FBA4D87230C400A009FF1FF /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		2FBA4D88230C401C009FF1FF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2FDA075F230C2DC90048A97C /* Assets.xcassets */,
+				2FDA0761230C2DC90048A97C /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		2FDA074C230C2DC30048A97C = {
@@ -132,9 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				2FDA0758230C2DC40048A97C /* AppDelegate.swift */,
-				2FDA075F230C2DC90048A97C /* Assets.xcassets */,
-				2FDA0761230C2DC90048A97C /* LaunchScreen.storyboard */,
 				2FDA0764230C2DC90048A97C /* Info.plist */,
+				2FBA4D87230C400A009FF1FF /* Configuration */,
+				2FBA4D88230C401C009FF1FF /* Resources */,
 				2F28E7E2230C36B40049212C /* Views */,
 			);
 			path = "The IDDOG";
@@ -353,8 +379,10 @@
 			files = (
 				2F28E7DF230C36610049212C /* SignInViewController.swift in Sources */,
 				2F28E7E8230C3BAB0049212C /* DogsTableViewHeader.swift in Sources */,
+				2FBA4D92230C4249009FF1FF /* DogsTableViewCell.swift in Sources */,
 				2FDA0759230C2DC40048A97C /* AppDelegate.swift in Sources */,
 				2F28E7E4230C3AAB0049212C /* DogsTableViewController.swift in Sources */,
+				2FBA4D96230C43FE009FF1FF /* DogsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,8 +392,10 @@
 			files = (
 				2F28E7E0230C36620049212C /* SignInViewController.swift in Sources */,
 				2F28E7E9230C3BAB0049212C /* DogsTableViewHeader.swift in Sources */,
+				2FBA4D93230C4249009FF1FF /* DogsTableViewCell.swift in Sources */,
 				2FDA076E230C2DC90048A97C /* The_IDDOGTests.swift in Sources */,
 				2F28E7E5230C3AAB0049212C /* DogsTableViewController.swift in Sources */,
+				2FBA4D97230C43FE009FF1FF /* DogsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,8 +405,10 @@
 			files = (
 				2F28E7E1230C36620049212C /* SignInViewController.swift in Sources */,
 				2F28E7EA230C3BAB0049212C /* DogsTableViewHeader.swift in Sources */,
+				2FBA4D94230C4249009FF1FF /* DogsTableViewCell.swift in Sources */,
 				2FDA0779230C2DC90048A97C /* The_IDDOGUITests.swift in Sources */,
 				2F28E7E6230C3AAB0049212C /* DogsTableViewController.swift in Sources */,
+				2FBA4D98230C43FE009FF1FF /* DogsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
