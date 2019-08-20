@@ -26,7 +26,7 @@ class DogsTableViewHeader: UITableViewHeaderFooterView {
     
     func setupSeeMoreButton() {
         seeMoreButton.setTitleColor(.black, for: .normal)
-        seeMoreButton.setTitle("SEE MORE", for: .normal)
+        seeMoreButton.setTitle("See More", for: .normal)
         seeMoreButton.translatesAutoresizingMaskIntoConstraints = false
         addSubview(seeMoreButton)
         seeMoreButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true

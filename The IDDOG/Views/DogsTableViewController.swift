@@ -22,8 +22,7 @@ class DogsTableViewController: UINavigationController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(DogsTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "headerIdentifier")
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
-        tableView.separatorColor = .white
+        tableView.register(DogsTableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
     }
     
     func setupLayout() {
@@ -33,6 +32,7 @@ class DogsTableViewController: UINavigationController {
     }
     
     func setupTableViewLayout() {
+        tableView.separatorColor = .white
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: navigationBar.frame.height + UIApplication.shared.statusBarFrame.height + 1).isActive = true
@@ -45,11 +45,11 @@ class DogsTableViewController: UINavigationController {
 extension DogsTableViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 232
+        return 200
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 56
+        return 48 
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -69,7 +69,7 @@ extension DogsTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! DogsTableViewCell
         return cell
     }
 }
