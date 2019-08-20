@@ -31,7 +31,7 @@ class DogsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height), collectionViewLayout: collectionViewLayout)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "collectionCellIdentifier")
+        collectionView.register(DogsCollectionViewCell.self, forCellWithReuseIdentifier: "collectionCellIdentifier")
     }
     
     func setupCollectionViewLayout() {
@@ -58,9 +58,7 @@ class DogsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCellIdentifier", for: indexPath)
-        cell.backgroundColor = .red
-        cell.layer.cornerRadius = 5.0
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCellIdentifier", for: indexPath) as! DogsCollectionViewCell
         return cell
     }
 }
