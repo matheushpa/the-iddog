@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftKeychainWrapper
+import SwiftyJSON
 
 class SignInViewController: UIViewController {
 
@@ -15,10 +18,12 @@ class SignInViewController: UIViewController {
     let appNameLabel = UILabel()
     let lineView = UIView()
     let loginButton = UIButton(type: .system)
+    var userViewModel: UserViewModel!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupLayout()
+        userViewModel = UserViewModel(delegate: self)
     }
     
     func setupLayout() {
@@ -82,8 +87,8 @@ class SignInViewController: UIViewController {
         loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
-    func showAlert() {
-        let alertView = UIAlertController(title: "Alerta", message: "Fill up with a valid email!", preferredStyle: .alert)
+    func showAlert(message: String) {
+        let alertView = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertView.addAction(alertAction)
         present(alertView, animated: true, completion: nil)
@@ -92,9 +97,9 @@ class SignInViewController: UIViewController {
     @objc func loginPressed() {
         if let email = emailTextField.text {
             if email.isEmpty {
-                showAlert()
+                showAlert(message: "Fill up with a valid email!")
             } else {
-                goToNextView()
+                userViewModel.getUser(email: email)
             }
         }
     }
@@ -105,5 +110,17 @@ class SignInViewController: UIViewController {
         navigationController.navigationBar.topItem?.titleView = appNameLabel
         navigationController.navigationBar.isTranslucent = false
         present(navigationController, animated: true, completion: nil)
+    }
+}
+
+extension SignInViewController: AuthenticationDelegate {
+    
+    func authenticationSuccess(user: JSON) {
+        userViewModel.parseUser(json: user)
+        goToNextView()
+    }
+    
+    func authenticationFailure(_ errorMessage: String) {
+        showAlert(message: errorMessage)
     }
 }
