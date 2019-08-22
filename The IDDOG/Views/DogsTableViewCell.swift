@@ -11,6 +11,7 @@ import UIKit
 class DogsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var collectionView: UICollectionView!
+    var listOfImages: [String] = []
     let collectionViewLayout = UICollectionViewFlowLayout()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -45,6 +46,10 @@ class DogsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
         collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
     }
     
+    func bindData(dog: DogModel) {
+        listOfImages = dog.imagesList
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -54,11 +59,13 @@ class DogsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
         return CGSize(width: 256, height: frame.height)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return listOfImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCellIdentifier", for: indexPath) as! DogsCollectionViewCell
+        let image = listOfImages[indexPath.row]
+        cell.bindData(imageURL: image)
         return cell
     }
     

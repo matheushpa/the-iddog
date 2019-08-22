@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class DogsTableViewController: UIViewController {
 
     let tableView = UITableView()
+    var dogsViewModel: DogsViewModel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupLayout()
-        setupTableView()
+        dogsViewModel = DogsViewModel(delegate: self)
+        dogsViewModel.getDogs(dogType: "hound")
     }
     
     func setupTableView() {
@@ -57,6 +63,7 @@ extension DogsTableViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerIdentifier") as! DogsTableViewHeader
+        headerView.headerLabel.text = dogsViewModel.listOfDogs.first!.category!.uppercased()
         return headerView
     }
 }
@@ -64,7 +71,7 @@ extension DogsTableViewController: UITableViewDelegate {
 extension DogsTableViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return dogsViewModel.listOfDogs.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,6 +80,23 @@ extension DogsTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! DogsTableViewCell
+        let currentDog = dogsViewModel.listOfDogs[indexPath.section]
+        cell.bindData(dog: currentDog)
         return cell
+    }
+}
+
+extension DogsTableViewController: DogsServiceDelegate {
+    
+    func getDogsSuccess(dog: JSON) {
+        print(dog)
+        dogsViewModel.parseDog(json: dog)
+        print(dogsViewModel.listOfDogs.count)
+        setupLayout()
+        setupTableView()
+    }
+    
+    func getDogsFailure(_ errorMessage: String) {
+        print(errorMessage)
     }
 }

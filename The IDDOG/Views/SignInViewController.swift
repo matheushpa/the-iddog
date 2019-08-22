@@ -22,8 +22,8 @@ class SignInViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupLayout()
         userViewModel = UserViewModel(delegate: self)
+        setupLayout()
     }
     
     func setupLayout() {

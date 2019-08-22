@@ -21,10 +21,12 @@ class RequestFactory {
         return Alamofire.request("\(baseURL)signup", method:.post, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
     }
     
-    static func getDogsFeed(dogType: String, token: String) -> DataRequest {
+    static func getDogsFeed(dogType: String) -> DataRequest {
         
-        let headers: HTTPHeaders = ["Authorization": token,
+        print(token) // FIX TOKEN
+//        let parameters: Parameters = ["category": "hound"]
+        let headers: HTTPHeaders = ["Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJpZGRvZy1zZXJ2aWNlIiwic3ViIjoiNWQ1YWZhNmI0NzRkYWE2NzI2YjIwMTc3IiwiaWF0IjoxNTY2MjQzNDM1LCJleHAiOjE1Njc1Mzk0MzV9.JtrCSj3O-d3xcFlYuBSAE7bvIbPBoCxQmTMk0T4w1tY",
                                     "Content-Type": "application/json"]
-        return Alamofire.request("\(baseURL)feed/?category=\(dogType)", method:.get, encoding: URLEncoding.queryString, headers: headers)
+        return Alamofire.request("\(baseURL)feed", method:.get, encoding: JSONEncoding.default, headers: headers)
     }
 }
