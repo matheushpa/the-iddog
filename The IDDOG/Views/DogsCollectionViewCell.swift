@@ -19,10 +19,6 @@ class DogsCollectionViewCell: UICollectionViewCell {
     }
     
     func setupImageViewLayout() {
-        dogImageView.af_setImage(withURL: URL(string: "https://images.dog.ceo/breeds/hound-english/n02089973_1106.jpg")!, runImageTransitionIfCached: true, completion: { (image) in
-//            self.errorReloadView.isHidden = true
-//            self.hideAnimation(loadingView: self.loadingView)
-        })
         dogImageView.contentMode = .scaleAspectFill
         dogImageView.layer.cornerRadius = 5.0
         dogImageView.clipsToBounds = true
@@ -32,6 +28,13 @@ class DogsCollectionViewCell: UICollectionViewCell {
         dogImageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         dogImageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         dogImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
+    
+    func bindData(imageURL: String) {
+        dogImageView.af_setImage(withURL: URL(string: imageURL)!, runImageTransitionIfCached: true, completion: { (image) in
+            //            self.errorReloadView.isHidden = true
+            //            self.hideAnimation(loadingView: self.loadingView)
+        })
     }
 
     required init?(coder aDecoder: NSCoder) {

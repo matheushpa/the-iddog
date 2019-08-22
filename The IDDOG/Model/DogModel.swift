@@ -11,7 +11,7 @@ import Foundation
 open class DogModel {
     
     public var category: String?
-    public var imagesList: [String]?
+    public var imagesList: [String] = []
     
     public init(){}
 }

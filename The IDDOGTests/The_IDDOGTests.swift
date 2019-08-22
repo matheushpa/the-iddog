@@ -52,7 +52,7 @@ class The_IDDOGTests: XCTestCase {
             "Authorization": token,
             "Content-Type": "application/json"
         ]
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response: DataResponse<Any>) in
+        Alamofire.request("\(baseURL)feed", method: .get, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response: DataResponse<Any>) in
             switch response.result {
             case .success:
                 print(response.result.value)

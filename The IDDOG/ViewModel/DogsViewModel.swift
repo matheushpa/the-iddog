@@ -11,17 +11,31 @@ import SwiftyJSON
 
 class DogsViewModel {
     
-//    let dogsViewModel: [DogModel] = []
+    public var listOfDogs: [DogModel] = []
+    private var dog: DogModel?
+    private var dogService: DogsService!
     
-    var dog: DogModel?
+    init(delegate: DogsServiceDelegate) {
+        
+        dogService = DogsService(delegate: delegate)
+    }
     
-    func parseDog(json: JSON) -> DogModel? {
+    func getDogs(dogType: String) {
+        
+        dogService.getDog(dogType: dogType)
+    }
+    
+    func parseDog(json: JSON) {
         
         dog = DogModel()
         dog?.category = json["category"].string
-        if let list = json["list"].array {
-            print(list)
+        if let imageList = json["list"].array {
+            for position in 0..<(imageList.count) {
+                if let image = imageList[position].string {
+                    dog?.imagesList.append(image)
+                }
+            }
         }
-        return dog
+        listOfDogs.append(dog!)
     }
 }
