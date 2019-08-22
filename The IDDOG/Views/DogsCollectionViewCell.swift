@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class DogsCollectionViewCell: UICollectionViewCell {
     
@@ -18,7 +19,10 @@ class DogsCollectionViewCell: UICollectionViewCell {
     }
     
     func setupImageViewLayout() {
-        dogImageView.image = UIImage(named: "husky")
+        dogImageView.af_setImage(withURL: URL(string: "https://images.dog.ceo/breeds/hound-english/n02089973_1106.jpg")!, runImageTransitionIfCached: true, completion: { (image) in
+//            self.errorReloadView.isHidden = true
+//            self.hideAnimation(loadingView: self.loadingView)
+        })
         dogImageView.contentMode = .scaleAspectFill
         dogImageView.layer.cornerRadius = 5.0
         dogImageView.clipsToBounds = true
