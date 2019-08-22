@@ -11,7 +11,6 @@ import Alamofire
 import SwiftyJSON
 
 protocol AuthenticationDelegate {
-    
     func authenticationSuccess(user: JSON)
     func authenticationFailure(_ errorMessage: String)
 }
@@ -22,12 +21,10 @@ public class Authentication {
     var userRequest: Request?
     
     required init(delegate: AuthenticationDelegate) {
-        
         self.delegate = delegate
     }
     
     func signIn(email: String) {
-        
         userRequest = RequestFactory.postLogin(email: email).validate().responseJSON { response in
             switch response.result {
             case .success:
@@ -41,7 +38,6 @@ public class Authentication {
     }
     
     private func errorHandler<T: Any>(response: DataResponse<T>) -> String {
-        
         if let httpResponse = response.response {
             if httpResponse.statusCode == 404 {
                 return "Account doesn't exist or was not found."

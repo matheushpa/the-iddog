@@ -11,7 +11,6 @@ import SwiftyJSON
 import Alamofire
 
 protocol DogsServiceDelegate {
-    
     func getDogsSuccess(dog: JSON)
     func getDogsFailure(_ errorMessage: String)
 }
@@ -22,13 +21,10 @@ public class DogsService {
     var dogRequest: Request?
     
     required init(delegate: DogsServiceDelegate) {
-        
         self.delegate = delegate
     }
     
     func getDog(dogType: String) {
-        
-        print(dogType)
         dogRequest = RequestFactory.getDogsFeed(dogType: dogType).validate().responseJSON { response in
             switch response.result {
             case .success:
@@ -42,7 +38,6 @@ public class DogsService {
     }
     
     private func errorHandler<T: Any>(response: DataResponse<T>) -> String {
-        
         if let httpResponse = response.response {
             if httpResponse.statusCode == 404 {
                 return "Content doesn't exist or was not found."

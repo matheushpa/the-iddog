@@ -12,16 +12,17 @@ import SwiftyJSON
 class DogsTableViewController: UIViewController {
 
     let tableView = UITableView()
+    let dogTypesList = ["husky", "hound", "pug", "labrador"]
     var dogsViewModel: DogsViewModel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dogsViewModel = DogsViewModel(delegate: self)
-        dogsViewModel.getDogs(dogType: "hound")
+        for type in dogTypesList {
+            dogsViewModel.getDogs(dogType: type)
+        }
+        setupLayout()
+        setupTableView()
     }
     
     func setupTableView() {
@@ -46,8 +47,8 @@ class DogsTableViewController: UIViewController {
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
-    @objc func showSelectedImage() {
-        
+    @objc func showSelectedImage(imageURL: String) {
+        print(imageURL)
     }
 }
 
@@ -63,7 +64,8 @@ extension DogsTableViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerIdentifier") as! DogsTableViewHeader
-        headerView.headerLabel.text = dogsViewModel.listOfDogs.first!.category!.uppercased()
+        let currentDog = dogsViewModel.listOfDogs[section]
+        headerView.bindData(dog: currentDog)
         return headerView
     }
 }
@@ -89,11 +91,8 @@ extension DogsTableViewController: UITableViewDataSource {
 extension DogsTableViewController: DogsServiceDelegate {
     
     func getDogsSuccess(dog: JSON) {
-        print(dog)
         dogsViewModel.parseDog(json: dog)
-        print(dogsViewModel.listOfDogs.count)
-        setupLayout()
-        setupTableView()
+        tableView.reloadData()
     }
     
     func getDogsFailure(_ errorMessage: String) {

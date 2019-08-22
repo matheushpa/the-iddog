@@ -18,6 +18,7 @@ class DogsCollectionViewCell: UICollectionViewCell {
         setupImageViewLayout()
     }
     
+    // MARK: - Setup methods
     func setupImageViewLayout() {
         dogImageView.contentMode = .scaleAspectFill
         dogImageView.layer.cornerRadius = 5.0
@@ -31,10 +32,7 @@ class DogsCollectionViewCell: UICollectionViewCell {
     }
     
     func bindData(imageURL: String) {
-        dogImageView.af_setImage(withURL: URL(string: imageURL)!, runImageTransitionIfCached: true, completion: { (image) in
-            //            self.errorReloadView.isHidden = true
-            //            self.hideAnimation(loadingView: self.loadingView)
-        })
+        dogImageView.af_setImage(withURL: URL(string: imageURL)!, placeholderImage: UIImage(named: "placeholder"), runImageTransitionIfCached: true)
     }
 
     required init?(coder aDecoder: NSCoder) {

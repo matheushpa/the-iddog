@@ -15,18 +15,14 @@ let token = KeychainWrapper.standard.string(forKey: "Token")
 class RequestFactory {
     
     static func postLogin(email: String) -> DataRequest {
-        
         let parameters: Parameters = ["email": email]
         let headers: HTTPHeaders = ["Content-Type": "application/json"]
-        return Alamofire.request("\(baseURL)signup", method:.post, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
+        return Alamofire.request("\(baseURL)signup/", method:.post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
     }
     
     static func getDogsFeed(dogType: String) -> DataRequest {
-        
-        print(token) // FIX TOKEN
-//        let parameters: Parameters = ["category": "hound"]
-        let headers: HTTPHeaders = ["Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJpZGRvZy1zZXJ2aWNlIiwic3ViIjoiNWQ1YWZhNmI0NzRkYWE2NzI2YjIwMTc3IiwiaWF0IjoxNTY2MjQzNDM1LCJleHAiOjE1Njc1Mzk0MzV9.JtrCSj3O-d3xcFlYuBSAE7bvIbPBoCxQmTMk0T4w1tY",
+        let headers: HTTPHeaders = ["Authorization": token!,
                                     "Content-Type": "application/json"]
-        return Alamofire.request("\(baseURL)feed", method:.get, encoding: JSONEncoding.default, headers: headers)
+        return Alamofire.request("\(baseURL)feed/?category=\(dogType)", method:.get, encoding: JSONEncoding.default, headers: headers)
     }
 }

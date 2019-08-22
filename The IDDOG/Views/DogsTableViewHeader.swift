@@ -18,6 +18,7 @@ class DogsTableViewHeader: UITableViewHeaderFooterView {
         setupLayout()
     }
     
+    // MARK - Setup methods
     func setupLayout() {
         contentView.backgroundColor = .white
         setupSeeMoreButton()
@@ -34,13 +35,16 @@ class DogsTableViewHeader: UITableViewHeaderFooterView {
     }
     
     func setupHeaderLabel() {
-        headerLabel.text = "H U S K Y"
         headerLabel.textColor = .black
         headerLabel.numberOfLines = 1
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(headerLabel)
         headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+    }
+    
+    func bindData(dog: DogModel) {
+        headerLabel.text = dog.category?.uppercased()
     }
     
     required init?(coder aDecoder: NSCoder) {

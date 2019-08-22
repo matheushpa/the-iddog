@@ -99,7 +99,7 @@ class SignInViewController: UIViewController {
             if email.isEmpty {
                 showAlert(message: "Fill up with a valid email!")
             } else {
-                userViewModel.getUser(email: email)
+                userViewModel.getUser(email: email.lowercased())
             }
         }
     }
