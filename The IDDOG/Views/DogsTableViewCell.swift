@@ -21,6 +21,7 @@ class DogsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
         setupCollectionViewLayout()
     }
     
+    // MARK: - Setup methods
     func setupCollectionViewFlowLayout() {
         collectionViewLayout.scrollDirection = .horizontal
         collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
@@ -56,7 +57,7 @@ class DogsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     
     // MARK - UICollectionView methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 256, height: frame.height)
+        return CGSize(width: frame.height, height: frame.height)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listOfImages.count
@@ -71,6 +72,7 @@ class DogsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = DogsTableViewController()
-        viewController.showSelectedImage()
+        let image = listOfImages[indexPath.row]
+        viewController.showSelectedImage(imageURL: image)
     }
 }

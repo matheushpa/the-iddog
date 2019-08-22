@@ -16,17 +16,14 @@ class DogsViewModel {
     private var dogService: DogsService!
     
     init(delegate: DogsServiceDelegate) {
-        
         dogService = DogsService(delegate: delegate)
     }
     
     func getDogs(dogType: String) {
-        
         dogService.getDog(dogType: dogType)
     }
     
     func parseDog(json: JSON) {
-        
         dog = DogModel()
         dog?.category = json["category"].string
         if let imageList = json["list"].array {

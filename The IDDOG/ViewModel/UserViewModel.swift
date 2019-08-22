@@ -16,22 +16,18 @@ class UserViewModel {
     private var userService: Authentication!
     
     init(delegate: AuthenticationDelegate) {
-        
         userService = Authentication(delegate: delegate)
     }
     
     func getUser(email: String) {
-        
         userService.signIn(email: email)
     }
     
     func getCurrentUser() -> UserModel? {
-        
         return self.user
     }
     
     func parseUser(json: JSON) {
-    
         user = UserModel()
         let currentUser = json["user"].dictionary
         user?.email = currentUser?["email"]?.string
