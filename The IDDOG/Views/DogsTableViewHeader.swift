@@ -11,7 +11,6 @@ import UIKit
 class DogsTableViewHeader: UITableViewHeaderFooterView {
 
     let headerLabel = UILabel()
-    let seeMoreButton = UIButton(type: .system)
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -21,17 +20,7 @@ class DogsTableViewHeader: UITableViewHeaderFooterView {
     // MARK - Setup methods
     func setupLayout() {
         contentView.backgroundColor = .white
-        setupSeeMoreButton()
         setupHeaderLabel()
-    }
-    
-    func setupSeeMoreButton() {
-        seeMoreButton.setTitleColor(.black, for: .normal)
-        seeMoreButton.setTitle("See More", for: .normal)
-        seeMoreButton.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(seeMoreButton)
-        seeMoreButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
-        seeMoreButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
     
     func setupHeaderLabel() {
