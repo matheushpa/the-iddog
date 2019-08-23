@@ -41,14 +41,15 @@ class DogsTableViewController: UIViewController {
         tableView.separatorColor = .white
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
     @objc func showSelectedImage(imageURL: String) {
-        print(imageURL)
+        let photoViewer = PhotoViewController()
+        present(photoViewer, animated: true, completion: nil)
     }
 }
 
