@@ -18,6 +18,8 @@ class NavigationViewController: UINavigationController {
         super.viewDidLoad()
         
         if userIsLoggedIn() {
+            feedViewController.title = "T H E  I D D O G"
+            navigationBar.isTranslucent = false 
             viewControllers = [feedViewController]
         } else {
             perform(#selector(goToSignInViewController), with: nil, afterDelay: 0.01)

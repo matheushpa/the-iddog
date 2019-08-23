@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class DogsTableViewController: UIViewController {
 
-    let tableView = UITableView()
+    private lazy var tableView = UITableView()
     let dogTypesList = ["husky", "hound", "pug", "labrador"]
     var dogsViewModel: DogsViewModel!
     
@@ -21,7 +21,6 @@ class DogsTableViewController: UIViewController {
         for type in dogTypesList {
             dogsViewModel.getDogs(dogType: type)
         }
-        setupLayout()
         setupTableView()
     }
     
@@ -30,6 +29,7 @@ class DogsTableViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(DogsTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "headerIdentifier")
         tableView.register(DogsTableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
+        setupLayout()
     }
     
     func setupLayout() {
@@ -49,7 +49,7 @@ class DogsTableViewController: UIViewController {
     
     @objc func showSelectedImage(imageURL: String) {
         let photoViewer = PhotoViewController()
-        present(photoViewer, animated: true, completion: nil)
+//        present(photoViewer, animated: true, completion: nil)
     }
 }
 
