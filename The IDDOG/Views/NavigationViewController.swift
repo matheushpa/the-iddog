@@ -22,7 +22,7 @@ class NavigationViewController: UINavigationController {
             navigationBar.isTranslucent = false 
             viewControllers = [feedViewController]
         } else {
-            perform(#selector(goToSignInViewController))
+            perform(#selector(goToSignInViewController), with: nil, afterDelay: 0.01)
         }
     }
     
