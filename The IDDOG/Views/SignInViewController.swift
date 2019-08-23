@@ -20,6 +20,12 @@ class SignInViewController: UIViewController {
     let loginButton = UIButton(type: .system)
     var userViewModel: UserViewModel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tapOutsideKeyboard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapOutsideKeyboard)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         userViewModel = UserViewModel(delegate: self)
@@ -41,9 +47,9 @@ class SignInViewController: UIViewController {
         emailTextField.textColor = .black
         emailTextField.tintColor = .black
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(emailTextField)
         emailTextField.heightAnchor.constraint(equalToConstant: 48).isActive = true
         emailTextField.widthAnchor.constraint(equalToConstant: 256).isActive = true
-        view.addSubview(emailTextField)
         emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
@@ -66,9 +72,9 @@ class SignInViewController: UIViewController {
     func setupLineView() {
         lineView.backgroundColor = UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 1)
         lineView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(lineView)
         lineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         lineView.widthAnchor.constraint(equalToConstant: 256).isActive = true
-        view.addSubview(lineView)
         lineView.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 4).isActive = true
         lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
@@ -80,9 +86,9 @@ class SignInViewController: UIViewController {
         loginButton.layer.cornerRadius = 5.0
         loginButton.addTarget(self, action: #selector(loginPressed), for: .touchUpInside)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(loginButton)
         loginButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
         loginButton.widthAnchor.constraint(equalToConstant: 232).isActive = true
-        view.addSubview(loginButton)
         loginButton.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 80).isActive = true
         loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
@@ -92,6 +98,10 @@ class SignInViewController: UIViewController {
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertView.addAction(alertAction)
         present(alertView, animated: true, completion: nil)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @objc func loginPressed() {
