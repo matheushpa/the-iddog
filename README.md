@@ -7,6 +7,6 @@ Simple type an email on the Sign In and wait for the dog pictures to show up!
 
 # Installation
 
-After you download the project, you need to install the pods into your project:
+After you download or clone the project, you need to use the terminal to install the pods into your project:
 
 `pod install`
