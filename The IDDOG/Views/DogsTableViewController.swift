@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import AlamofireImage
 
 class DogsTableViewController: UIViewController {
 
@@ -25,8 +26,8 @@ class DogsTableViewController: UIViewController {
         return tableView
     }()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         dogsViewModel = DogsViewModel(delegate: self)
         for type in dogTypesList {
             dogsViewModel.getDogs(dogType: type)
@@ -52,11 +53,6 @@ class DogsTableViewController: UIViewController {
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertView.addAction(alertAction)
         present(alertView, animated: true, completion: nil)
-    }
-    
-    @objc func showSelectedImage(imageURL: String) {
-        let photoViewer = PhotoViewController()
-        present(photoViewer, animated: true, completion: nil)
     }
 }
 
@@ -91,6 +87,7 @@ extension DogsTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! DogsTableViewCell
         let currentDog = dogsViewModel.listOfDogs[indexPath.section]
+        cell.delegate = self
         cell.bindData(dog: currentDog)
         return cell
     }
@@ -105,5 +102,17 @@ extension DogsTableViewController: DogsServiceDelegate {
     
     func getDogsFailure(_ errorMessage: String) {
         showAlert(message: errorMessage)
+    }
+}
+
+extension DogsTableViewController: DogsCollectionViewCellDelegate {
+    
+    func showSelectedImage(imageURL: String) {
+        let photoViewer = PhotoViewController()
+        photoViewer.imageView.af_setImage(withURL: URL(string: imageURL)!, placeholderImage: UIImage(named: "placeholder"), runImageTransitionIfCached: true)
+        self.addChild(photoViewer)
+        photoViewer.view.frame = self.view.bounds
+        self.view.addSubview(photoViewer.view)
+        photoViewer.didMove(toParent: self)
     }
 }
