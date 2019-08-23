@@ -11,9 +11,19 @@ import SwiftyJSON
 
 class DogsTableViewController: UIViewController {
 
-    private lazy var tableView = UITableView()
     let dogTypesList = ["husky", "hound", "pug", "labrador"]
     var dogsViewModel: DogsViewModel!
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.separatorColor = .white
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(DogsTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "headerIdentifier")
+        tableView.register(DogsTableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
+        return tableView
+    }()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -21,14 +31,6 @@ class DogsTableViewController: UIViewController {
         for type in dogTypesList {
             dogsViewModel.getDogs(dogType: type)
         }
-        setupTableView()
-    }
-    
-    func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(DogsTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "headerIdentifier")
-        tableView.register(DogsTableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
         setupLayout()
     }
     
@@ -38,18 +40,23 @@ class DogsTableViewController: UIViewController {
     }
     
     func setupTableViewLayout() {
-        tableView.separatorColor = .white
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
+    func showAlert(message: String) {
+        let alertView = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertView.addAction(alertAction)
+        present(alertView, animated: true, completion: nil)
+    }
+    
     @objc func showSelectedImage(imageURL: String) {
         let photoViewer = PhotoViewController()
-//        present(photoViewer, animated: true, completion: nil)
+        present(photoViewer, animated: true, completion: nil)
     }
 }
 
@@ -97,6 +104,6 @@ extension DogsTableViewController: DogsServiceDelegate {
     }
     
     func getDogsFailure(_ errorMessage: String) {
-        print(errorMessage)
+        showAlert(message: errorMessage)
     }
 }

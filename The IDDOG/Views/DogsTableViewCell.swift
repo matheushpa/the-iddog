@@ -10,36 +10,35 @@ import UIKit
 
 class DogsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var collectionView: UICollectionView!
     var listOfImages: [String] = []
-    let collectionViewLayout = UICollectionViewFlowLayout()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupCollectionViewFlowLayout()
-        setupCollectionView()
-        setupCollectionViewLayout()
-    }
-    
-    // MARK: - Setup methods
-    func setupCollectionViewFlowLayout() {
+    private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
+        let collectionViewLayout = UICollectionViewFlowLayout()
         collectionViewLayout.scrollDirection = .horizontal
         collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collectionViewLayout.minimumLineSpacing = 16
         collectionViewLayout.invalidateLayout()
-    }
+        return collectionViewLayout
+    }()
     
-    func setupCollectionView() {
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height), collectionViewLayout: collectionViewLayout)
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height), collectionViewLayout: collectionViewLayout)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(DogsCollectionViewCell.self, forCellWithReuseIdentifier: "collectionCellIdentifier")
-    }
-    
-    func setupCollectionViewLayout() {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .white
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(DogsCollectionViewCell.self, forCellWithReuseIdentifier: "collectionCellIdentifier")
+        return collectionView
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupCollectionViewLayout()
+    }
+    
+    // MARK: - Setup methods
+    func setupCollectionViewLayout() {
         addSubview(collectionView)
         collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
