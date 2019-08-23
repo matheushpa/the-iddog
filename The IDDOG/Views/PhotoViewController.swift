@@ -15,12 +15,14 @@ class PhotoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupLayout()
-//        showBlurView()
+        setupLayout()
+        showBlurView()
+        let tapOutsideKeyboard = UITapGestureRecognizer(target: self, action: #selector(dismissPhotoView))
+        view.addGestureRecognizer(tapOutsideKeyboard)
     }
     
     func setupLayout() {
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -38,5 +40,9 @@ class PhotoViewController: UIViewController {
             self.view.alpha = 1.0
             self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         })
+    }
+    
+    @objc func dismissPhotoView() {
+        view.removeFromSuperview()
     }
 }

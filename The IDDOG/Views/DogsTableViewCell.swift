@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol DogsCollectionViewCellDelegate {
+    func showSelectedImage(imageURL: String)
+}
+
 class DogsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var listOfImages: [String] = []
+    var delegate: DogsCollectionViewCellDelegate?
     
     private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
         let collectionViewLayout = UICollectionViewFlowLayout()
@@ -70,8 +75,7 @@ class DogsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = DogsTableViewController()
         let image = listOfImages[indexPath.row]
-        viewController.showSelectedImage(imageURL: image)
+        self.delegate?.showSelectedImage(imageURL: image)
     }
 }
